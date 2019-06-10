@@ -14,13 +14,13 @@ public class Main {
         }
 
         int man2 = sc.nextInt();
-        Arrays.copyOf(arr,arr.length+man2);
+        arr = Arrays.copyOf(arr,arr.length+man2);
         for (int i = arr.length-man2; i < arr.length; i++) {
             arr[i]=sc.nextInt();
         }
 
         int man3 = sc.nextInt();
-        Arrays.copyOf(arr,arr.length+man3);
+        arr = Arrays.copyOf(arr,arr.length+man3);
         for (int i = arr.length-man3; i < arr.length; i++) {
             arr[i]=sc.nextInt();
         }
@@ -28,15 +28,12 @@ public class Main {
         Arrays.sort(arr);
         int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length-2; i++) {
             if (arr[i] == arr[i+1] && arr[i+1] == arr[i+2]) {
-                if (i != arr.length-3){
-                    count++;
-                }else {
-                    break;
-                }
+                count++;
             }
         }
+        System.out.println(count);
 
     }
 }
